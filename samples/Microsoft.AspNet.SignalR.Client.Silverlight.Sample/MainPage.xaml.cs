@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Net;
+using System.Net.Browser;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -17,6 +19,8 @@ namespace Microsoft.AspNet.SignalR.Client.Silverlight.Sample
 
             // Set the data context of the listbox control to the sample data
             DataContext = App.ViewModel;
+
+            WebRequest.RegisterPrefix("http://localhost:40476/", WebRequestCreator.ClientHttp);
 
             var connection = new Connection("http://localhost:40476/raw-connection");
 

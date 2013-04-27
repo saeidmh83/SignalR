@@ -46,7 +46,7 @@ namespace Microsoft.AspNet.SignalR.Client.Http
                      {
                          throw new HttpClientException(responseMessage);
                      }
-  
+
                      return (IResponse)new HttpResponseMessageWrapper(responseMessage, client);
                  });
         }
